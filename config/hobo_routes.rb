@@ -5,6 +5,22 @@
 Bonuscalc::Application.routes.draw do
 
 
+  # Resource routes for controller bonus_finals
+  resources :bonus_finals
+
+
+  # Resource routes for controller monthly_process_schedules
+  resources :monthly_process_schedules, :only => [:index, :show]
+
+
+  # Resource routes for controller penalty_overrides
+  resources :penalty_overrides
+
+
+  # Resource routes for controller process_windows
+  resources :process_windows
+
+
   # Resource routes for controller users
   resources :users, :only => [:edit, :show, :create, :update, :destroy] do
     collection do

@@ -10,6 +10,7 @@ gem 'tiny_tds'
 #gem 'mongrel --pre'
 gem 'activerecord-sqlserver-adapter'
 #gem 'mongrel_service'
+#gem 'magic_model_generator'
 
 
 # Gems used only for assets and not required

@@ -6,8 +6,451 @@
 <def tag="main-nav">
   <navigation class="main-nav" merge-attrs param="default">
     <nav-item href="#{base_url}/">Home</nav-item>
+    <nav-item with="&BonusFinal"><ht key="bonus_final.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&MonthlyProcessSchedule"><ht key="monthly_process_schedule.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&PenaltyOverride"><ht key="penalty_override.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&ProcessWindow"><ht key="process_window.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
   </navigation>
 </def>
+
+
+
+
+<!-- ====== BonusFinal Pages ====== -->
+
+<def tag="index-page" for="BonusFinal">
+  <page merge title="#{ht 'bonus_final.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page bonus-final" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="bonus_final.index.heading">
+          <model-name-human model="&model"/>
+        </ht>
+      </h2>
+
+      <p param="count" if>
+        <ht key="bonus_final.collection.count" count="&collection_count">
+          <count summary/>
+        </ht>
+      </p>
+    </content-header:>
+
+    <content-body: param>
+      <a action="new" to="&model" param="new-link">
+        <ht key="bonus_final.actions.new">New Bonus final</ht>
+      </a>
+
+      <page-nav param="top-page-nav"/>
+
+      <collection param/>
+
+      <page-nav param="bottom-page-nav"/>
+
+
+    </content-body:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="BonusFinal">
+  <page merge title="#{ht 'bonus_final.new.title', :default=>[' New Bonus final'] }">
+    <body: class="new-page bonus-final" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="bonus_final.new.heading">
+          New Bonus final
+        </ht>
+      </h2>
+    </content-header:>
+
+    <content-body: param>
+      <form param>
+        <submit: label="#{ht 'bonus_final.actions.create', :default=>['Create Bonus final']}"/>
+      </form>
+    </content-body:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="BonusFinal">
+  <page merge title="#{ht 'bonus_final.show.title', :default=>['Bonus final'], :name => name(:no_wrapper => true) }" without-aside >
+
+    <body: class="show-page bonus-final" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="bonus_final.show.heading" name="#{name(:no_wrapper => true)}">
+          Bonus final <name/>
+        </ht>
+      </h2>
+
+      <record-flags fields="" param/>
+
+      <a action="edit" if="&can_edit?" param="edit-link">
+        <ht key="bonus_final.actions.edit" name="#{name(:no_wrapper => true)}">
+          Edit Bonus final
+        </ht>
+      </a>
+    </content-header:>
+
+    <content-body: param>
+      <field-list fields="userinitial, fiscalyear, fiscalmonth" param/>
+    </content-body:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="BonusFinal">
+  <page merge title="#{ht 'bonus_final.edit.title', :default=>['Edit Bonus final'], :name => name(:no_wrapper => true) }">
+
+    <body: class="edit-page bonus-final" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="bonus_final.edit.heading" name="#{name(:no_wrapper => true)}">
+          Edit Bonus final
+        </ht>
+      </h2>
+      <delete-button label="#{ht 'bonus_final.actions.delete', :default=>['Remove This Bonus final']}" param/>
+    </content-header:>
+
+    <content-body: param>
+      <form param/>
+    </content-body:>
+
+  </page>
+</def>
+
+
+
+
+
+<!-- ====== MonthlyProcessSchedule Pages ====== -->
+
+<def tag="index-page" for="MonthlyProcessSchedule">
+  <page merge title="#{ht 'monthly_process_schedule.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page monthly-process-schedule" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="monthly_process_schedule.index.heading">
+          <model-name-human model="&model"/>
+        </ht>
+      </h2>
+
+      <p param="count" if>
+        <ht key="monthly_process_schedule.collection.count" count="&collection_count">
+          <count summary/>
+        </ht>
+      </p>
+    </content-header:>
+
+    <content-body: param>
+
+      <page-nav param="top-page-nav"/>
+
+      <collection param/>
+
+      <page-nav param="bottom-page-nav"/>
+
+
+    </content-body:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="MonthlyProcessSchedule">
+  <page merge title="#{ht 'monthly_process_schedule.new.title', :default=>[' New Monthly process schedule'] }">
+    <body: class="new-page monthly-process-schedule" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="monthly_process_schedule.new.heading">
+          New Monthly process schedule
+        </ht>
+      </h2>
+    </content-header:>
+
+    <content-body: param>
+      <form param>
+        <submit: label="#{ht 'monthly_process_schedule.actions.create', :default=>['Create Monthly process schedule']}"/>
+      </form>
+    </content-body:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="MonthlyProcessSchedule">
+  <page merge title="#{ht 'monthly_process_schedule.show.title', :default=>['Monthly process schedule'], :name => name(:no_wrapper => true) }" without-aside >
+
+    <body: class="show-page monthly-process-schedule" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="monthly_process_schedule.show.heading" name="#{name(:no_wrapper => true)}">
+          Monthly process schedule <name/>
+        </ht>
+      </h2>
+
+      <record-flags fields="" param/>
+    </content-header:>
+
+    <content-body: param>
+      <field-list fields="FiscalYear, FiscalMonth, JobStartTime, JobEndTime, JobStatus, CreatedDate, CreatedUser" param/>
+    </content-body:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="MonthlyProcessSchedule">
+  <page merge title="#{ht 'monthly_process_schedule.edit.title', :default=>['Edit Monthly process schedule'], :name => name(:no_wrapper => true) }">
+
+    <body: class="edit-page monthly-process-schedule" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="monthly_process_schedule.edit.heading" name="#{name(:no_wrapper => true)}">
+          Edit Monthly process schedule
+        </ht>
+      </h2>
+      <delete-button label="#{ht 'monthly_process_schedule.actions.delete', :default=>['Remove This Monthly process schedule']}" param/>
+    </content-header:>
+
+    <content-body: param>
+      <form param/>
+    </content-body:>
+
+  </page>
+</def>
+
+
+
+
+
+<!-- ====== PenaltyOverride Pages ====== -->
+
+<def tag="index-page" for="PenaltyOverride">
+  <page merge title="#{ht 'penalty_override.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page penalty-override" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="penalty_override.index.heading">
+          <model-name-human model="&model"/>
+        </ht>
+      </h2>
+
+      <p param="count" if>
+        <ht key="penalty_override.collection.count" count="&collection_count">
+          <count summary/>
+        </ht>
+      </p>
+    </content-header:>
+
+    <content-body: param>
+      <a action="new" to="&model" param="new-link">
+        <ht key="penalty_override.actions.new">New Penalty override</ht>
+      </a>
+
+      <page-nav param="top-page-nav"/>
+
+      <collection param/>
+
+      <page-nav param="bottom-page-nav"/>
+
+
+    </content-body:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="PenaltyOverride">
+  <page merge title="#{ht 'penalty_override.new.title', :default=>[' New Penalty override'] }">
+    <body: class="new-page penalty-override" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="penalty_override.new.heading">
+          New Penalty override
+        </ht>
+      </h2>
+    </content-header:>
+
+    <content-body: param>
+      <form param>
+        <submit: label="#{ht 'penalty_override.actions.create', :default=>['Create Penalty override']}"/>
+      </form>
+    </content-body:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="PenaltyOverride">
+  <page merge title="#{ht 'penalty_override.show.title', :default=>['Penalty override'], :name => name(:no_wrapper => true) }" without-aside >
+
+    <body: class="show-page penalty-override" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="penalty_override.show.heading" name="#{name(:no_wrapper => true)}">
+          Penalty override <name/>
+        </ht>
+      </h2>
+
+      <record-flags fields="" param/>
+
+      <a action="edit" if="&can_edit?" param="edit-link">
+        <ht key="penalty_override.actions.edit" name="#{name(:no_wrapper => true)}">
+          Edit Penalty override
+        </ht>
+      </a>
+    </content-header:>
+
+    <content-body: param>
+      <field-list fields="branchnumber, fiscalyear, fiscalmonth" param/>
+    </content-body:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="PenaltyOverride">
+  <page merge title="#{ht 'penalty_override.edit.title', :default=>['Edit Penalty override'], :name => name(:no_wrapper => true) }">
+
+    <body: class="edit-page penalty-override" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="penalty_override.edit.heading" name="#{name(:no_wrapper => true)}">
+          Edit Penalty override
+        </ht>
+      </h2>
+      <delete-button label="#{ht 'penalty_override.actions.delete', :default=>['Remove This Penalty override']}" param/>
+    </content-header:>
+
+    <content-body: param>
+      <form param/>
+    </content-body:>
+
+  </page>
+</def>
+
+
+
+
+
+<!-- ====== ProcessWindow Pages ====== -->
+
+<def tag="index-page" for="ProcessWindow">
+  <page merge title="#{ht 'process_window.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page process-window" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="process_window.index.heading">
+          <model-name-human model="&model"/>
+        </ht>
+      </h2>
+
+      <p param="count" if>
+        <ht key="process_window.collection.count" count="&collection_count">
+          <count summary/>
+        </ht>
+      </p>
+    </content-header:>
+
+    <content-body: param>
+      <a action="new" to="&model" param="new-link">
+        <ht key="process_window.actions.new">New Process window</ht>
+      </a>
+
+      <page-nav param="top-page-nav"/>
+
+      <collection param/>
+
+      <page-nav param="bottom-page-nav"/>
+
+
+    </content-body:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="ProcessWindow">
+  <page merge title="#{ht 'process_window.new.title', :default=>[' New Process window'] }">
+    <body: class="new-page process-window" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="process_window.new.heading">
+          New Process window
+        </ht>
+      </h2>
+    </content-header:>
+
+    <content-body: param>
+      <form param>
+        <submit: label="#{ht 'process_window.actions.create', :default=>['Create Process window']}"/>
+      </form>
+    </content-body:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="ProcessWindow">
+  <page merge title="#{ht 'process_window.show.title', :default=>['Process window'], :name => name(:no_wrapper => true) }" without-aside >
+
+    <body: class="show-page process-window" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="process_window.show.heading" name="#{name(:no_wrapper => true)}">
+          Process window <name/>
+        </ht>
+      </h2>
+
+      <record-flags fields="" param/>
+
+      <a action="edit" if="&can_edit?" param="edit-link">
+        <ht key="process_window.actions.edit" name="#{name(:no_wrapper => true)}">
+          Edit Process window
+        </ht>
+      </a>
+    </content-header:>
+
+    <content-body: param>
+      <field-list fields="fiscalyear, fiscalmonth" param/>
+    </content-body:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="ProcessWindow">
+  <page merge title="#{ht 'process_window.edit.title', :default=>['Edit Process window'], :name => name(:no_wrapper => true) }">
+
+    <body: class="edit-page process-window" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="process_window.edit.heading" name="#{name(:no_wrapper => true)}">
+          Edit Process window
+        </ht>
+      </h2>
+      <delete-button label="#{ht 'process_window.actions.delete', :default=>['Remove This Process window']}" param/>
+    </content-header:>
+
+    <content-body: param>
+      <form param/>
+    </content-body:>
+
+  </page>
+</def>
+
 
 
 

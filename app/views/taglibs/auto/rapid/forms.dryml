@@ -1,6 +1,54 @@
 <!-- AUTOMATICALLY GENERATED FILE - DO NOT EDIT -->
 
 
+<def tag="form" for="BonusFinal">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="userinitial, fiscalyear, fiscalmonth" param/>
+    <div param="actions">
+      <submit label="#{ht 'bonus_final.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
+<def tag="form" for="MonthlyProcessSchedule">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="FiscalYear, FiscalMonth, JobStartTime, JobEndTime, JobStatus, CreatedDate, CreatedUser" param/>
+    <div param="actions">
+      <submit label="#{ht 'monthly_process_schedule.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
+<def tag="form" for="PenaltyOverride">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="branchnumber, fiscalyear, fiscalmonth" param/>
+    <div param="actions">
+      <submit label="#{ht 'penalty_override.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
+<def tag="form" for="ProcessWindow">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="fiscalyear, fiscalmonth" param/>
+    <div param="actions">
+      <submit label="#{ht 'process_window.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
 <def tag="form" for="User">
   <form merge param="default">
     <error-messages param/>
