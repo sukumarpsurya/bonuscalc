@@ -33,7 +33,7 @@ development:
   port: 58941
   database: BonusCalc
   username: 'svc-bicc-sql'
-  password: 'G0#Blue2011'
+  password: 'xx'
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -46,7 +46,7 @@ test:
   port: 58941
   database: BonusCalc
   username: 'svc-bicc-sql'
-  password: 'G0#Blue2011'
+  password: 'xx'
 
 
 production:
@@ -57,5 +57,5 @@ production:
   port: 58941
   database: BonusCalc
   username: 'svc-bicc-sql'
-  password: 'G0#Blue2011'
+  password: 'xx'
 
